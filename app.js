@@ -39,7 +39,7 @@ function mainApp() {
           addEmployee();
           break;
         case "Update employee role":
-          console.log("success");
+          addRole();
           break;
         case "Delete employee":
           console.log("success");
@@ -48,7 +48,7 @@ function mainApp() {
           console.log("success");
           break;
         case "Add new department":
-          console.log("success");
+          addDept();
           break;
         case "View all employees":
           console.log("success");
