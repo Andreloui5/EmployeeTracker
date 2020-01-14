@@ -1,9 +1,10 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
+const connection = require("../db/connection");
 
-function viewEmployeeDept() {
+function viewRole() {
 
 }
 
-module.exports = viewEmployeeDept;
+module.exports = viewRole;

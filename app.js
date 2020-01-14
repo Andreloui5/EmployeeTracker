@@ -2,15 +2,15 @@ const connection = require("./db/connection");
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
-const addDept = require("./assets/addDept");
-const addEmployee = require("./assets/addEmployee");
-const addRole = require("./assets/addRole");
-const deleteEmployee = require("./assets/deleteEmployee");
-const updateEmployeeRole = require("./assets/updateEmployeeRole");
-const viewDept = require("./assets/viewDept");
-const viewEmployees = require("./assets/viewEmployees");
-const viewEmployeesDept = require("./assets/viewEmployeesDept");
-const viewRole = require("./assets/viewRole");
+const addDept = require("./components/addDept");
+const addEmployee = require("./components/addEmployee");
+const addRole = require("./components/addRole");
+const deleteEmployee = require("./components/deleteEmployee");
+const updateEmployeeRole = require("./components/updateEmployeeRole");
+const viewDept = require("./components/viewDept");
+const viewEmployees = require("./components/viewEmployees");
+const viewEmployeesDept = require("./components/viewEmployeesDept");
+const viewRole = require("./components/viewRole");
 
 connection.connect(err => {
   if (err) throw err;
@@ -49,6 +49,7 @@ function mainApp() {
           break;
         case "Add new department":
           addDept();
+
           break;
         case "View all employees":
           console.log("success");
@@ -57,5 +58,7 @@ function mainApp() {
           connection.end();
           break;
       }
+    }).then(()=> {
+      mainApp;
     });
 }

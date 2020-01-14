@@ -1,6 +1,7 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
+const connection = require("../db/connection");
 
 function addRole() {
   inquirer.prompt([
@@ -19,8 +20,6 @@ function addRole() {
     connection.query(query + [res.roleName, res.salary]);
     console.log(`Success! ${res.roleName} has been created with a salary of ${res.salary}.`);
     console.log("-------------------");
-  }).then (()=>{
-    mainApp()
   });
 }
 
