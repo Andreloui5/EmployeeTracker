@@ -2,8 +2,8 @@ const mysql = require("mysql");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
 
-function viewEmployee() {
+function updateEmployee() {
 
 }
 
-module.exports = viewEmployee;
+module.exports = updateEmployee;

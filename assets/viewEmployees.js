@@ -3,7 +3,7 @@ const mysql = require("mysql");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
 
-function viewEmployee() {
+function viewEmployees() {
 
   //selects employee info and joins employee role and dept
   let query = "SELECT employee.id, employee.first_name, employee_role.title, department.name as 'Department', employee_role.salary, (SELECT CONCAT(employee.first_name, employee.last_name";
@@ -17,7 +17,8 @@ function viewEmployee() {
         //console log response for each index
         console.table(res[i]);
       };
+      mainApp();
     })
 };
 
-module.exports = viewEmployee;
+module.exports = viewEmployees;

@@ -19,8 +19,9 @@ function addEmployee() {
     connection.query(query + [res.firstName, res.lastName]);
     console.log(`Success! ${res.firstName} ${res.lastName} has been created.`);
     console.log("-------------------");
-  })
-
-}
+  }).then (()=>{
+    mainApp()
+  });
+};
 
 module.exports = addEmployee;

@@ -8,7 +8,7 @@ const addRole = require("./assets/addRole");
 const deleteEmployee = require("./assets/deleteEmployee");
 const updateEmployeeRole = require("./assets/updateEmployeeRole");
 const viewDept = require("./assets/viewDept");
-const viewEmployee = require("./assets/viewEmployee");
+const viewEmployees = require("./assets/viewEmployees");
 const viewEmployeesDept = require("./assets/viewEmployeesDept");
 const viewRole = require("./assets/viewRole");
 
@@ -24,20 +24,19 @@ function mainApp() {
       type:"list",
       name: "task",
       message:"What would you like to do?",
-      choices: ["View all employees", "View employees by department", "Add new employee", "Update employee role", "Delete employee", "View all departments", "Add new department", "View all employees"]
+      choices: ["View all employees", "View employees by department", "Add new employee", "Update employee role", "Delete employee", "View all departments", "Add new department", "View all employees", "Exit"]
     }])
     .then(function({task}) {
       // switch statement based on user choice
       switch (task) {
         case "View all employees":
-          viewEmployee();
-          mainApp();
+          viewEmployees();
           break;
         case "View employees by department":
           console.log("success");
           break;
         case "Add new employee":
-          console.log("success");
+          addEmployee();
           break;
         case "Update employee role":
           console.log("success");
@@ -53,6 +52,9 @@ function mainApp() {
           break;
         case "View all employees":
           console.log("success");
+          break;
+        case "Exit":
+          connection.end();
           break;
       }
     });
