@@ -59,6 +59,6 @@ function mainApp() {
           break;
       }
     }).then(()=> {
-      mainApp;
+      mainApp();
     });
 }

@@ -16,7 +16,7 @@ function addEmployee() {
       message:"What's the employee's last name?"
     }
   ]).then(res=>{
-    let query = "INSERT INTO employee (first_name, last_name) VALUES ?"
+    let query = "INSERT INTO employee (first_name, last_name) VALUES (?)"
     connection.query(query + [res.firstName, res.lastName]);
     console.log(`Success! ${res.firstName} ${res.lastName} has been created.`);
     console.log("-------------------");

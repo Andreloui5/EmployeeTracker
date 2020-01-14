@@ -10,12 +10,12 @@ function addDept() {
       name:"deptName",
       message:"What department would you like to add?"
     }
-  ]).then( (res) =>{
-    let query = ("INSERT INTO department VALUES ?", );
+  ]).then(res =>{
+    let query = "INSERT INTO department (name) VALUES (?)";
     // console.log(query)
-    connection.query(query, (err) => {
+    connection.query(query, [res.deptName], (err) => {
       if (err) throw err;
-      console.log(`Success! The department ${res.deptName} has been created.`);
+      console.log(`Success! The ${res.deptName} department has been created.`);
       console.log("-------------------");
     });
   })
