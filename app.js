@@ -24,7 +24,7 @@ function mainApp() {
       type:"list",
       name: "task",
       message:"What would you like to do?",
-      choices: ["View all employees", "View employees by department", "Add new employee", "Update employee role", "Delete employee", "View all departments", "Add new department", "View all employees", "Exit"]
+      choices: ["View all employees", "View employee roles", "Add new employee", "Update employee role", "Delete employee", "View all departments", "Add new department", "View all employees", "Exit"]
     }])
     .then(function({task}) {
       // switch statement based on user choice
@@ -32,8 +32,8 @@ function mainApp() {
         case "View all employees":
           viewEmployees();
           break;
-        case "View employees by department":
-          console.log("success");
+        case "View employee roles":
+          viewRole();
           break;
         case "Add new employee":
           addEmployee();
@@ -49,14 +49,12 @@ function mainApp() {
           break;
         case "Add new department":
           addDept();
-
-          break;
-        case "View all employees":
-          console.log("success");
           break;
         case "Exit":
           connection.end();
-          break;
+          return;
       }
+    }).then(()=>{
+      mainApp();
     })
 }
