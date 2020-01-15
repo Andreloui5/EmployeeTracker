@@ -42,10 +42,10 @@ function mainApp() {
           addRole();
           break;
         case "Delete employee":
-          console.log("success");
+          deleteEmployee();
           break;
         case "View all departments":
-          console.log("success");
+          viewDept();
           break;
         case "Add new department":
           addDept();
@@ -58,7 +58,5 @@ function mainApp() {
           connection.end();
           break;
       }
-    }).then(()=> {
-      mainApp();
-    });
+    })
 }

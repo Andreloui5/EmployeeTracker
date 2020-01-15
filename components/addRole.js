@@ -16,7 +16,7 @@ function addRole() {
       message:"What's the salary for this position?"
     }
   ]).then(res=>{
-    let query = "INSERT INTO department (title, salary) VALUES ?"
+    let query = "INSERT INTO department (title, salary) VALUES (?)"
     connection.query(query + [res.roleName, res.salary]);
     console.log(`Success! ${res.roleName} has been created with a salary of ${res.salary}.`);
     console.log("-------------------");
